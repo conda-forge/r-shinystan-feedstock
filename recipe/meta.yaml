@@ -1,4 +1,4 @@
-{% set version = '2.4.0' %}
+{% set version = "2.5.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/shinystan_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/shinystan/shinystan_{{ version }}.tar.gz
-  sha256: 4e014489e3e9c2d86b0b6ddabda0fbe7fdc7ce254100704d779ce667a0806da1
+  sha256: 45f9c552a31035c5de8658bb9e5d72da7ec1f88fbddb520d15fe701c677154a1
 
 build:
   number: 0
