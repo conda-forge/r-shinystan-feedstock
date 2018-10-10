@@ -1,5 +1,4 @@
-{% set version = "2.5.0" %}
-
+{% set version = '2.5.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +9,12 @@ package:
 source:
   fn: shinystan_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/shinystan_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/shinystan/shinystan_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/shinystan_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/shinystan/shinystan_{{ version }}.tar.gz
   sha256: 45f9c552a31035c5de8658bb9e5d72da7ec1f88fbddb520d15fe701c677154a1
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   # no win64 package for r-rsconnect
   skip: true  # [win]
@@ -24,9 +24,11 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-dt >=0.2
-    - r-bayesplot >=1.2.0
+    - r-bayesplot >=1.5.0
     - r-colourpicker
     - r-dygraphs >=1.1.1.2
     - r-ggplot2 >=2.1.1
@@ -35,18 +37,17 @@ requirements:
     - r-markdown >=0.7.4
     - r-reshape2
     - r-rsconnect >=0.4.2
-    - r-rstan >=2.14.1
+    - r-rstan >=2.17.1
     - r-shiny >=1.0.3
     - r-shinyjs >=0.6.0
     - r-shinythemes >=1.0.1
     - r-threejs >=0.2.1
     - r-xtable
     - r-xts >=0.9_7
-
   run:
     - r-base
     - r-dt >=0.2
-    - r-bayesplot >=1.2.0
+    - r-bayesplot >=1.5.0
     - r-colourpicker
     - r-dygraphs >=1.1.1.2
     - r-ggplot2 >=2.1.1
@@ -55,7 +56,7 @@ requirements:
     - r-markdown >=0.7.4
     - r-reshape2
     - r-rsconnect >=0.4.2
-    - r-rstan >=2.14.1
+    - r-rstan >=2.17.1
     - r-shiny >=1.0.3
     - r-shinyjs >=0.6.0
     - r-shinythemes >=1.0.1
@@ -65,7 +66,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('shinystan')"  # [not win]
+    - $R -e "library('shinystan')"           # [not win]
     - "\"%R%\" -e \"library('shinystan')\""  # [win]
 
 about:
@@ -82,8 +83,9 @@ about:
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
