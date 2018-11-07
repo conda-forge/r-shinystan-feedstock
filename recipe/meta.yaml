@@ -15,9 +15,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 0
-  # no win64 package for r-rsconnect
-  skip: true  # [win]
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
