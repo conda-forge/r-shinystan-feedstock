@@ -1,6 +1,8 @@
 About r-shinystan
 =================
 
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+
 Home: http://mc-stan.org/, http://discourse.mc-stan.org
 
 Package license: GPL (>= 3)
@@ -14,9 +16,8 @@ Summary: A graphical user interface for interactive Markov chain Monte Carlo (MC
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-shinystan-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-shinystan-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-shinystan-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-shinystan-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-shinystan-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-shinystan-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-shinystan-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-shinystan-feedstock)
 
 Current release info
 ====================
@@ -104,3 +105,14 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@bgruening](https://github.com/bgruening/)
+* [@cbrueffer](https://github.com/cbrueffer/)
+* [@daler](https://github.com/daler/)
+* [@dbast](https://github.com/dbast/)
+* [@jdblischak](https://github.com/jdblischak/)
+* [@johanneskoester](https://github.com/johanneskoester/)
+

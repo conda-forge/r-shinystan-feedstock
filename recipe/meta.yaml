@@ -14,15 +14,15 @@ source:
   sha256: 45f9c552a31035c5de8658bb9e5d72da7ec1f88fbddb520d15fe701c677154a1
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 1
+  number: 1001
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-dt >=0.2
@@ -76,8 +76,7 @@ about:
     output of MCMC  programs written in any programming language (and has extended  functionality
     for 'Stan' models fit using the 'rstan' and 'rstanarm'  packages).
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
