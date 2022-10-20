@@ -5,7 +5,7 @@ Home: http://mc-stan.org/, http://discourse.mc-stan.org
 
 Package license: GPL (>= 3)
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-shinystan-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-shinystan-feedstock/blob/main/LICENSE.txt)
 
 Summary: A graphical user interface for interactive Markov chain Monte Carlo (MCMC) diagnostics and plots and tables helpful for analyzing a posterior sample. The interface is powered by the 'Shiny' web application framework from 'RStudio' and works with the output of MCMC  programs written in any programming language (and has extended  functionality for 'Stan' models fit using the 'rstan' and 'rstanarm'  packages).
 
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5202&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-shinystan-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=5202&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-shinystan-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -39,16 +39,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-shinystan` can be installed with:
+Once the `conda-forge` channel has been enabled, `r-shinystan` can be installed with `conda`:
 
 ```
 conda install r-shinystan
 ```
 
-It is possible to list all of the versions of `r-shinystan` available on your platform with:
+or with `mamba`:
+
+```
+mamba install r-shinystan
+```
+
+It is possible to list all of the versions of `r-shinystan` available on your platform with `conda`:
 
 ```
 conda search r-shinystan --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search r-shinystan --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search r-shinystan --channel conda-forge
+
+# List packages depending on `r-shinystan`:
+mamba repoquery whoneeds r-shinystan --channel conda-forge
+
+# List dependencies of `r-shinystan`:
+mamba repoquery depends r-shinystan --channel conda-forge
 ```
 
 
@@ -66,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
