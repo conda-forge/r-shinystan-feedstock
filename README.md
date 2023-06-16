@@ -1,11 +1,11 @@
-About r-shinystan
-=================
+About r-shinystan-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-shinystan-feedstock/blob/main/LICENSE.txt)
 
 Home: http://mc-stan.org/, http://discourse.mc-stan.org
 
 Package license: GPL (>= 3)
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-shinystan-feedstock/blob/main/LICENSE.txt)
 
 Summary: A graphical user interface for interactive Markov chain Monte Carlo (MCMC) diagnostics and plots and tables helpful for analyzing a posterior sample. The interface is powered by the 'Shiny' web application framework from 'RStudio' and works with the output of MCMC  programs written in any programming language (and has extended  functionality for 'Stan' models fit using the 'rstan' and 'rstanarm'  packages).
 
